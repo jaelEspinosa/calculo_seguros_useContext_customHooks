@@ -19,7 +19,7 @@
     display: block;
     width: 25%;
     height: 25%;
-    background-color: rgb(31, 17, 58);
+    background-color: rgb(72, 74, 197);
     border-radius: 100%;
     animation: sk-chase-dot-before 2.0s infinite ease-in-out both; 
   }
@@ -54,7 +54,7 @@
   }
   .spinner{
     width: 768;
-    margin-top: 1rem;
+    margin-top: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;

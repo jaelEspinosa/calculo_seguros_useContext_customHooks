@@ -2,10 +2,10 @@ import { Fragment, useState } from "react"
 import { MARCAS,YEARS,PLANES } from "../constants" 
 import useCotizador from "../hooks/useCotizador"
 import Error from "./Error"
-
+import styles from '../styles/Error.module.css'
 
 const Formulario = () => {
- const {handleChangeDatos, datos, error, setError,cotizarSeguro,setResultadoState} = useCotizador()
+ const {handleChangeDatos, datos, error, setError,cotizarSeguro,setResultadoState,resultadoState} = useCotizador()
  
  const handleSubmit = e=>{
        e.preventDefault()
@@ -15,7 +15,7 @@ const Formulario = () => {
         return
       }
        setError('')
-      setResultadoState(0)
+     
       cotizarSeguro()
        
  }
@@ -26,16 +26,16 @@ const Formulario = () => {
       <form onSubmit={handleSubmit}>
         
          <div className="my-5">
-           <label className="block mb-3 font-bold text-gray-400 uppercase ">
-           Marca
+           <label className="block mb-3 font-bold text-gray-800 uppercase ">
+           Clase
            </label>
            <select 
            name="marca"
-           className="w-full p-3 bg-white border border-gray-200"
+           className={`w-full p-3 bg-white border border-gray-200 rounded-xl ${styles.error}`}
            onChange={e=>handleChangeDatos(e)}
            value={datos.marca}
            >
-              <option value=''>--Selecciona Marca--</option>
+              <option value=''>--Selecciona clase--</option>
               {MARCAS.map(marca => (
                 <option
                  name='marca'
@@ -49,12 +49,12 @@ const Formulario = () => {
 
          </div>
          <div className="my-5">
-           <label className="block mb-3 font-bold text-gray-400 uppercase ">
-           Año
+           <label className="block mb-3 font-bold text-gray-800 uppercase ">
+           Año matriculación
            </label>
            <select 
            name="year"
-           className="w-full p-3 bg-white border border-gray-200"
+           className={`w-full p-3 bg-white border border-gray-200 rounded-xl  ${styles.error}`}
            onChange={e=>handleChangeDatos(e)}
            value={datos.year}
            >
@@ -68,8 +68,8 @@ const Formulario = () => {
               ))}
            </select> 
          </div>
-         <div className="my-5">
-           <label className="block mb-3 font-bold text-gray-400 uppercase ">
+         <div className={`my-10 mt-16 border border-gray-200 rounded-xl p-5 ${styles.error}`}>
+           <label className="block mb-3 font-bold text-gray-800 uppercase ">
            Elije Modalidad
            </label>
            <div className="flex gap-3 items-center">
@@ -90,8 +90,8 @@ const Formulario = () => {
          </div>
          <input 
           type='submit'
-          className='w-full bg-indigo-500 hover:bg-indigo-800 transition-colors  text-white cursor-pointer uppercase font-bold p-3'
-          value='Cotizar'
+          className='w-full bg-indigo-500 hover:bg-indigo-800 transition-colors  text-white cursor-pointer uppercase font-bold p-3 rounded-xl shadow-xl shadow-black'
+          value='Calcular'
          />
          
       </form>

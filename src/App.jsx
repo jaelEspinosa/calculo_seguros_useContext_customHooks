@@ -2,18 +2,21 @@
 
 import './App.css'
 import AppSeguro from './components/AppSeguro'
+import CotizadorContext, { CotizadorProvider } from './context/CotizadorProvider'
 
-import { CotizadorProvider } from './context/CotizadorProvider'
+
 
 function App() {
   
 
   return (
-    <CotizadorProvider>
-      
+    
+      <CotizadorProvider>
        <AppSeguro />
+
+      </CotizadorProvider>
       
-    </CotizadorProvider>
+    
   )
 }
 
