@@ -23,7 +23,7 @@ const Resultado = () => {
     <div className='bg-gray-100 text-center mt-5 p-5 shadow'>
        <h2 className='text-gray-600 font-black text-3xl '>Resumen</h2>
        <p className='my-2 '>
-        <span className='font-bold'>Clase: </span>
+        <span className='font-bold'>Tipo de Vehículo: </span>
         {nombreMarca.nombre}
       </p>   
       <p className='my-2 '>

@@ -27,7 +27,7 @@ const Formulario = () => {
         
          <div className="my-5">
            <label className="block mb-3 font-bold text-gray-800 uppercase ">
-           Clase
+           Tipo de Vehículo: 
            </label>
            <select 
            name="marca"
